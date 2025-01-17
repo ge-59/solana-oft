@@ -9,14 +9,14 @@ const sepoliaContract: OmniPointHardhat = {
     contractName: 'TestOFT',
 }
 
-const bnbContract: OmniPointHardhat = {
+const bscContract: OmniPointHardhat = {
     eid: EndpointId.BSC_V2_TESTNET,
-    contractName: 'TestOFT',
+    contractName: 'BSCTestOFT',
 }
 
 const solanaContract: OmniPointHardhat = {
     eid: EndpointId.SOLANA_V2_TESTNET,
-    address: 'HiXGCd95ZgVM4tNborMeRcHCXCjiKD7AvWiLaCaRUMXN', // NOTE: update this with the OFTStore address.
+    address: 'GPT6CctvfCYcvEAsB1qLYytnbas3GkqH7Zzy51DVC4Rt', // NOTE: update this with the OFTStore address.
 }
 
 const config: OAppOmniGraphHardhat = {
@@ -28,42 +28,42 @@ const config: OAppOmniGraphHardhat = {
             contract: solanaContract,
         },
         {
-            contract: bnbContract,
+            contract: bscContract,
         },
     ],
     connections: [
-        {
-            from: sepoliaContract,
-            to: solanaContract,
-            // NOTE: Here are some default settings that have been found to work well sending to Solana.
-            // You need to either enable these enforcedOptions or pass in extraOptions when calling send().
-            // Having neither will cause a revert when calling send().
-            // We suggest performing additional profiling to ensure they are correct for your use case.
-            // config: {
-            //     enforcedOptions: [
-            //         {
-            //             msgType: 1,
-            //             optionType: ExecutorOptionType.LZ_RECEIVE,
-            //             gas: 200000,
-            //             value: 2500000,
-            //         },
-            //         {
-            //             msgType: 2,
-            //             optionType: ExecutorOptionType.LZ_RECEIVE,
-            //             gas: 200000,
-            //             value: 2500000,
-            //         },
-            //         {
-            //             // Solana options use (gas == compute units, value == lamports)
-            //             msgType: 2,
-            //             optionType: ExecutorOptionType.COMPOSE,
-            //             index: 0,
-            //             gas: 0,
-            //             value: 0,
-            //         },
-            //     ],
-            // },
-        },
+        // {
+        //     from: sepoliaContract,
+        //     to: solanaContract,
+        //     // NOTE: Here are some default settings that have been found to work well sending to Solana.
+        //     // You need to either enable these enforcedOptions or pass in extraOptions when calling send().
+        //     // Having neither will cause a revert when calling send().
+        //     // We suggest performing additional profiling to ensure they are correct for your use case.
+        //     // config: {
+        //     //     enforcedOptions: [
+        //     //         {
+        //     //             msgType: 1,
+        //     //             optionType: ExecutorOptionType.LZ_RECEIVE,
+        //     //             gas: 200000,
+        //     //             value: 2500000,
+        //     //         },
+        //     //         {
+        //     //             msgType: 2,
+        //     //             optionType: ExecutorOptionType.LZ_RECEIVE,
+        //     //             gas: 200000,
+        //     //             value: 2500000,
+        //     //         },
+        //     //         {
+        //     //             // Solana options use (gas == compute units, value == lamports)
+        //     //             msgType: 2,
+        //     //             optionType: ExecutorOptionType.COMPOSE,
+        //     //             index: 0,
+        //     //             gas: 0,
+        //     //             value: 0,
+        //     //         },
+        //     //     ],
+        //     // },
+        // },
         {
             from: solanaContract,
             to: sepoliaContract,
@@ -122,12 +122,12 @@ const config: OAppOmniGraphHardhat = {
                     {
                         msgType: 1,
                         optionType: ExecutorOptionType.LZ_RECEIVE,
-                        gas: 200000,
+                        gas: 120000,
                     },
                     {
                         msgType: 2,
                         optionType: ExecutorOptionType.LZ_RECEIVE,
-                        gas: 200000,
+                        gas: 120000,
                     },
                 ],
             },
@@ -135,7 +135,7 @@ const config: OAppOmniGraphHardhat = {
 
         {
             from: solanaContract,
-            to: bnbContract,
+            to: bscContract,
             // TODO Here are some default settings that have been found to work well sending to Sepolia.
             // You need to either enable these enforcedOptions or pass in extraOptions when calling send().
             // Having neither will cause a revert when calling send().
@@ -191,12 +191,12 @@ const config: OAppOmniGraphHardhat = {
                     {
                         msgType: 1,
                         optionType: ExecutorOptionType.LZ_RECEIVE,
-                        gas: 200000,
+                        gas: 120000,
                     },
                     {
                         msgType: 2,
                         optionType: ExecutorOptionType.LZ_RECEIVE,
-                        gas: 200000,
+                        gas: 120000,
                     },
                 ],
             },
