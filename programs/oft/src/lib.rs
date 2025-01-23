@@ -17,9 +17,18 @@ use oapp::{
 use solana_helper::program_id_from_env;
 use state::*;
 
+#[cfg(not(feature = "no-entrypoint"))]
+use solana_security_txt::security_txt;
+
+#[cfg(not(feature = "no-entrypoint"))]
+security_txt! {
+    name: "Solana OFT",
+    project_url: "https://layerzero.network"
+}
+
 declare_id!(Pubkey::new_from_array(program_id_from_env!(
     "OFT_ID",
-    "FVzVkg11hyYAoptWrhtQYyy9Lc7e4aecn1vvaQXAhnFQ"
+    "4heLVXmupTobMvSAwm8CX9k3N3VFmR2SjV6GpXPVoYRE"
 )));
 
 pub const OFT_SEED: &[u8] = b"OFT";

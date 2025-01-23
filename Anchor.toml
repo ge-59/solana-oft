@@ -5,14 +5,14 @@ anchor_version = "0.29.0"
 seeds = false
 skip-lint = false
 
-[programs.localnet]
-oft = "FVzVkg11hyYAoptWrhtQYyy9Lc7e4aecn1vvaQXAhnFQ"
+[programs.devnet]
+oft = "4heLVXmupTobMvSAwm8CX9k3N3VFmR2SjV6GpXPVoYRE"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "devnet"
 wallet = "./junk-id.json"
 
 [scripts]

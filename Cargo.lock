@@ -1373,6 +1373,7 @@ dependencies = [
  "anchor-spl",
  "oapp",
  "solana-helper",
+ "solana-security-txt",
  "utils",
 ]
 
