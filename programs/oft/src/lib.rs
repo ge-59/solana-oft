@@ -23,7 +23,9 @@ use solana_security_txt::security_txt;
 #[cfg(not(feature = "no-entrypoint"))]
 security_txt! {
     name: "Solana OFT",
-    project_url: "https://layerzero.network"
+    project_url: "https://layerzero.network",
+    contacts: "email:security@layerzero.network",
+    policy: "https://layerzero.network/security"
 }
 
 declare_id!(Pubkey::new_from_array(program_id_from_env!(
