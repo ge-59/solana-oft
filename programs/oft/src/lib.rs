@@ -22,15 +22,15 @@ use solana_security_txt::security_txt;
 
 #[cfg(not(feature = "no-entrypoint"))]
 security_txt! {
-    name: "Solana OFT",
-    project_url: "https://layerzero.network",
-    contacts: "email:security@layerzero.network",
-    policy: "https://layerzero.network/security"
+    name: "Prosper",
+    project_url: "https://www.prosper-fi.com",
+    contacts: "email:contact@prosper-fi.com",
+    policy: "https://www.prosper-fi.com"
 }
 
 declare_id!(Pubkey::new_from_array(program_id_from_env!(
     "OFT_ID",
-    "4heLVXmupTobMvSAwm8CX9k3N3VFmR2SjV6GpXPVoYRE"
+    "93AdRgjXBpNZhsYScJFBjxEKMfRPKBdf2CMgZGxmsCiV"
 )));
 
 pub const OFT_SEED: &[u8] = b"OFT";
