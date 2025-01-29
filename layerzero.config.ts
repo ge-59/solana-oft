@@ -16,7 +16,7 @@ const bscContract: OmniPointHardhat = {
 
 const solanaContract: OmniPointHardhat = {
     eid: EndpointId.SOLANA_V2_TESTNET,
-    address: 'B7Dm2YysYELAFW74J6hfsstwtBcnWPEwNBGRhMzQmMno', // NOTE: update this with the OFTStore address.
+    address: '8YwcfHvj4bs5TeEtVD6JupxhQBStDAb4FacyDbCnpVcm', // NOTE: update this with the OFTStore address.
 }
 
 const config: OAppOmniGraphHardhat = {
