@@ -16,7 +16,7 @@ import { createOFTFactory } from '@layerzerolabs/ua-devtools-solana'
 import { addComputeUnitInstructions, getExplorerTxLink } from './index'
 import { createSolanaConnectionFactory } from '../common/utils'
 
-type ConfigType = 'Admin' | 'Pauser' | 'Unpauser' | 'DefaultFee' | 'Paused' | 'Delegate'
+type ConfigType = 'Admin' | 'Pauser' | 'Unpauser' | 'DefaultFee' | 'Paused'
 
 interface SetOFTConfigTaskArgs {
     eid: EndpointId
@@ -31,7 +31,7 @@ task('lz:oft:solana:setconfig', 'Set OFT configuration parameters')
     .addParam('eid', 'Solana mainnet or testnet eid', undefined, types.eid)
     .addParam('programId', 'The OFT Program id')
     .addParam('oftStore', 'The OFTStore account')
-    .addParam('configType', 'Type of config to set (Admin, Pauser, Unpauser, DefaultFee, Paused, Delegate)')
+    .addParam('configType', 'Type of config to set (Admin, Pauser, Unpauser, DefaultFee, Paused)')
     .addParam('newValue', 'New value to set')
     .addParam('computeUnitPriceScaleFactor', 'The compute unit price scale factor', 4, devtoolsTypes.float, true)
     .setAction(async ({ 
@@ -70,12 +70,6 @@ task('lz:oft:solana:setconfig', 'Set OFT configuration parameters')
                 configParam = { 
                     __kind: 'Admin',
                     admin: publicKey(newValue)
-                }
-                break
-            case 'Delegate':
-                configParam = { 
-                    __kind: 'Delegate',
-                    delegate: publicKey(newValue)
                 }
                 break
             case 'Pauser':
