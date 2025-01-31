@@ -1,13 +1,3 @@
-<p align="center">
-  <a href="https://layerzero.network">
-    <img alt="LayerZero" style="width: 400px" src="https://docs.layerzero.network/img/LayerZero_Logo_White.svg"/>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://layerzero.network" style="color: #a77dff">Homepage</a> | <a href="https://docs.layerzero.network/" style="color: #a77dff">Docs</a> | <a href="https://layerzero.network/developers" style="color: #a77dff">Developers</a>
-</p>
-
 <h1 align="center">Prosper Solana Omnichain Fungible Token (OFT)</h1>
 
 ## Requirements
@@ -176,6 +166,7 @@ sh -c "$(curl -sSfL https://release.solana.com/v1.17.31/install)"
 
 </details>
 
+### Verify the Solana Program
 
 The verification process ensures that your deployed program matches exactly with your public source code. 
 
